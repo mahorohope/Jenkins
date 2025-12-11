@@ -67,9 +67,9 @@ pipeline {
                 // FIXED: Used %DOCKER_IMAGE% variable instead of "username/..."
                 // Added logic to stop the container only if it is actually running to prevent errors
                 bat """
-                    docker stop mahoro123/jenkins || echo "Container not running..."
-                    docker rm -f mahoro123/jenkins || echo "No container to remove..."
-                    docker run -d mahoro123/jenkins -p 8090:3000 ${DOCKER_IMAGE}:latest
+                    docker stop jenkins || echo "Container not running..."
+                    docker rm -f jenkins || echo "No container to remove..."
+                    docker run -d jenkins -p 8090:3000 ${DOCKER_IMAGE}:latest
                 """
             }
         }
