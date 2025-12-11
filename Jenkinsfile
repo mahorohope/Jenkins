@@ -69,7 +69,7 @@ pipeline {
                 bat """
                     docker stop jenkins || echo "Container not running..."
                     docker rm -f jenkins || echo "No container to remove..."
-                    docker run -d jenkins -p 8090:3000 ${DOCKER_IMAGE}:latest
+                    docker run -d --name jenkins -p 8090:3000 ${DOCKER_IMAGE}:latest
                 """
             }
         }
