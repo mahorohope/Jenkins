@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('About Page.\n');
   } else {
-    res.statusCode = 3000;
+    res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello, World!\n');
   }
